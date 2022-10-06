@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="search-hero">
+            <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
+        </div><br>
+
+        <table class="table table">
+            <thead>
+                <tr>
+                    <th>Order date</th>
+                    <th>Order number</th>
+                    <th>Order placed by</th>
+                    <th>Number of Product</th>
+                    <th>Product Details</th>
+                    <th>Total value order</th>
+                    <th>Supplier</th>
+                    <th>Date and time of last action</th>
+                    <th>Comment</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor="let task of task | filter:searchText" [ngStyle]="{'background-color':task.color}">
+                    <td> {{task.Orderdate}}</td>
+                    <td> {{task.Ordernumber}}</td>
+                    <td> {{task.Orderplacedby}}</td>
+                    <td> {{task.NumberofProduct}}</td>
+                    <td> {{task.ProductDetails}}</td>
+                    <td> {{task.Totalvalueorder}}</td>
+                    <td> {{task.Supplier}}</td>
+                    <td> {{task.Dateandtimeoflastaction}}</td>
+                    <td> {{task.Comment}}</td>
+                    <td> {{task.Status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
